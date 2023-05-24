@@ -1,10 +1,14 @@
+//This is the array with the 3 options
 const options = ["rock", "paper", "scissors"];
 
+//this function returns a random choice of 0,1,2 from the array
+//it then rounds it off uses the math.floor method and returns it.
 function getComputerChoice() {
   const choice = options[Math.floor(Math.random() * options.length)];
   return choice;
 }
 
+//here gives the parameters for winning.
 function checkWinner(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "Tie";
@@ -19,6 +23,7 @@ function checkWinner(playerSelection, computerSelection) {
   }
 }
 
+//this adds to above by telling returning more info about who won
 function playRound(playerSelection, computerSelection) {
   const result = checkWinner(playerSelection, computerSelection);
   if (result == "Tie") {
@@ -30,6 +35,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+//this is a while loop  until the player inserts 1 of the 3 choices
+//the input info is then changed to lower case so it matches the array
 function getPlayerChoice() {
   let validatedInput = false;
   while (validatedInput == false) {
@@ -45,6 +52,8 @@ function getPlayerChoice() {
   }
 }
 
+//here is where the score is.
+//uses a loop taking from the above function
 function game() {
   let scorePlayer = 0;
   let scoreComputer = 0;
@@ -70,4 +79,5 @@ function game() {
   }
 }
 
+//this calls the function above
 game();
